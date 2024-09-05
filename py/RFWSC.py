@@ -27,6 +27,7 @@ one_msg = ''
 
 
 def Log(cont=''):
+    print("count = ",cont)
     global send_msg, one_msg
     print(cont)
     if cont:
@@ -167,7 +168,7 @@ class RUN:
                 Log(f'> TOKEN失效！❌')
                 return False
         else:
-            print(f'> {act_name}失败❌：{response}')
+            Log(f'> {act_name}失败❌：{response}')
             return False
 
     def queryUserInfo(self):
@@ -308,6 +309,8 @@ class RUN:
             return False
 
     def sendMsg(self):
+        print("===========Start",one_msg)
+
         push_res = CHERWIN_TOOLS.wxpusher(self.send_UID, one_msg, APP_NAME)
 
 
@@ -414,4 +417,3 @@ export SCRIPT_UPDATE = 'False' 关闭脚本自动更新，默认开启
         for index, infos in enumerate(tokens):
             run_result = RUN(infos, index).main()
             if not run_result: continue
-        if send and not IS_DEV: send(f'{APP_NAME}挂机通知', send_msg + TIPS_HTML)

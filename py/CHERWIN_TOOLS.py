@@ -297,8 +297,9 @@ def send_wxpusher(UID, one_msg, APP_NAME, help=False):
 
 def wxpusher(UID, msg, title, help=False):
     """利用 wxpusher 的 web api 发送 json 数据包，实现微信信息的发送"""
+    print(title,msg)
     try:
-        QLAPI.notify(msg, title)
+        QLAPI.notify(title, msg)
     except Exception as e:
         print(f"推送失败 青龙未集成d: {e}")
 
