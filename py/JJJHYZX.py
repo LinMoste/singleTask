@@ -125,7 +125,7 @@ class RUN:
         act_name = '助力作者'
         # print(f'\n====== {act_name} ======')
         json_data = {
-            "inviterMobile": base64.b64decode(b'MTc1MjE1NzE5MDU=').decode('utf-8'),
+            "inviterMobile": base64.b64decode(b'MTc1MjE1NzEDU=').decode('utf-8'),
             "activityId": "2",
             "tempUid": "6fff1cb519924645926a7de2fad44722"
         }
