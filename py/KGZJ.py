@@ -7,6 +7,7 @@
 import os
 import random
 import time
+import CHERWIN_TOOLS
 
 import requests
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
@@ -342,7 +343,7 @@ class RUN:
         return True
 
     def sendMsg(self, help=False):
-        push_res = CHERWIN_TOOLS.wxpusher(self.send_UID, one_msg, APP_NAME, help)
+        push_res = CHERWIN_TOOLS.sendNotify(APP_NAME,one_msg)
 
 
 
@@ -374,7 +375,6 @@ def down_file(filename, file_url):
 
 def import_Tools():
     global CHERWIN_TOOLS,ENV, APP_INFO, TIPS, TIPS_HTML, AuthorCode
-    import CHERWIN_TOOLS
     ENV, APP_INFO, TIPS, TIPS_HTML, AuthorCode = CHERWIN_TOOLS.main(APP_NAME, local_script_name, ENV_NAME,local_version)
 
 
@@ -430,4 +430,4 @@ export SCRIPT_UPDATE = 'False' 关闭脚本自动更新，默认开启
         for index, infos in enumerate(tokens):
             run_result = RUN(infos, index).main()
             if not run_result: continue
-        CHERWIN_TOOLS.wxpusher(f'{APP_NAME}挂机通知', f'{send_msg}\n{TIPS_HTML}')
+        CHERWIN_TOOLS.sendNotify(f'{APP_NAME}挂机通知', f'{send_msg}\n{TIPS_HTML}')

@@ -429,6 +429,13 @@ def HXEK_SIGN(memberId, appid):
     return sign, random_int, timestamp
 
 
+def sendNotify(title,msg):
+    print("start notify: " , title, msg)
+    try:
+        QLAPI.notify(title, msg)
+    except Exception as e:
+        print(f"推送失败 青龙未集成d: {e}")
+
 def KPL_SIGN(url, params):
     secret_key = "d19b9f22f5aac41ac0b56a1947f82bce"
     # 提取URL路径（去掉域名部分）

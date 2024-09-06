@@ -228,7 +228,7 @@ class RUN:
                         if usableStock > 0:
                             Log(f'ID：【{self.goodsid}】 【{name}】 当前剩余：{usableStock}【可兑换】')
                             self.sendMsg()
-                            CHERWIN_TOOLS.wxpusher(f'{APP_NAME}挂机通知', send_msg + TIPS_HTML)
+                            CHERWIN_TOOLS.sendNotify(f'{APP_NAME}挂机通知', send_msg + TIPS_HTML)
                             if TYQH_DHID and TYQH_DHID == self.goodsid:
                                 self.exchange_reward(TYQH_DHID)
                             elif TYQH_DHID == '0':
@@ -280,7 +280,7 @@ class RUN:
         return True
 
     def sendMsg(self, help=False):
-        push_res = CHERWIN_TOOLS.wxpusher(self.send_UID, one_msg, APP_NAME, help)
+        push_res = CHERWIN_TOOLS.sendNotify(APP_NAME,one_msg)
 
 
 

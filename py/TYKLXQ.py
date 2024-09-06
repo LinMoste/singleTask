@@ -838,7 +838,7 @@ class RUN:
             return False
 
     def sendMsg(self):
-         push_res = CHERWIN_TOOLS.wxpusher(self.send_UID, one_msg, APP_NAME)
+         push_res = CHERWIN_TOOLS.sendNotify(APP_NAME,one_msg)
 
 
 def random_delay(min_delay=1, max_delay=5):

@@ -296,7 +296,7 @@ class RUN:
 
 
     def sendMsg(self,help=False):
-        push_res = CHERWIN_TOOLS.wxpusher(self.send_UID, one_msg, APP_NAME,help)
+        push_res = CHERWIN_TOOLS.sendNotify(self.send_UID, one_msg, APP_NAME,help)
 
 
 
@@ -399,4 +399,4 @@ export SCRIPT_UPDATE = 'False' 关闭脚本自动更新，默认开启
         for index, infos in enumerate(tokens):
             run_result = RUN(infos, index).help()
             if not run_result: continue
-        CHERWIN_TOOLS.wxpusher(f'{APP_NAME}挂机通知', send_msg + TIPS_HTML)
+        CHERWIN_TOOLS.sendNotify(f'{APP_NAME}挂机通知', send_msg + TIPS_HTML)

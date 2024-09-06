@@ -1643,7 +1643,7 @@ class RUN:
         return True
 
     def sendMsg(self, help=False):
-        push_res = CHERWIN_TOOLS.wxpusher(self.send_UID, one_msg, APP_NAME, help)
+        push_res = CHERWIN_TOOLS.sendNotify(APP_NAME,one_msg)
 
 
 

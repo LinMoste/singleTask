@@ -311,7 +311,7 @@ class RUN:
     def sendMsg(self):
         print("===========Start",one_msg)
 
-        push_res = CHERWIN_TOOLS.wxpusher(self.send_UID, one_msg, APP_NAME)
+        push_res = CHERWIN_TOOLS.sendNotify(APP_NAME,one_msg)
 
 
 
