@@ -480,7 +480,7 @@ def main(APP_NAME, local_script_name, ENV_NAME, local_version, need_invite=False
         APP_INFO = ""
         # print(APP_INFO)
         server_version = ""
-
+        local_version = ""
         TIPS = ""
         TIPS_HTML = ""
         ENV = os.environ.get(ENV_NAME)

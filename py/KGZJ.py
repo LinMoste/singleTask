@@ -430,4 +430,4 @@ export SCRIPT_UPDATE = 'False' 关闭脚本自动更新，默认开启
         for index, infos in enumerate(tokens):
             run_result = RUN(infos, index).main()
             if not run_result: continue
-        if send: send(f'{APP_NAME}挂机通知', f'{send_msg}\n{TIPS_HTML}')
+        CHERWIN_TOOLS.wxpusher(f'{APP_NAME}挂机通知', f'{send_msg}\n{TIPS_HTML}')
