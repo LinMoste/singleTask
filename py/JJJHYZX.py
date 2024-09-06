@@ -222,7 +222,7 @@ class RUN:
         Log(f"\n开始执行第{self.index}个账号--------------->>>>>")
         if self.get_userinfo():
             # random_delay(5,30)
-            self.invited()
+            # self.invited()
             self.get_Checkinlist()
             random_delay()
             self.get_pointInfo()
