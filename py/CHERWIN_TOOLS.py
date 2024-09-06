@@ -484,7 +484,6 @@ def main(APP_NAME, local_script_name, ENV_NAME, local_version, need_invite=False
         TIPS = ""
         TIPS_HTML = ""
         ENV = os.environ.get(ENV_NAME)
-        ENV = "00000000915154d301917e9489bb1ccb@ff8080817d9fbda8017dc20674f47fb6"
         if need_invite:
             AuthorCode = get_AuthorInviteCode(f'https://yhsh.ziyuand.cn/{ENV_NAME}_INVITE_CODE.json')
         else:
